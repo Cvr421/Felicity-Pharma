@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
     link: [
     {
       rel: "icon",
-      href: "logo",
+      href: logo,
       type: "image/png",
     },
   ],
