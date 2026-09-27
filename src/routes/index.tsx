@@ -21,15 +21,14 @@ import moxifel from "@/assets/Moxifel-625.png";
 import pancid from "@/assets/Pancid-Dsr.png";
 import rabejal from "@/assets/Rabejal-dsr.png";
 import zimfel from "@/assets/Zimfel-200 LB.png";
-const DnaScene = lazy(() =>
-  import("@/components/DnaScene").then(({ DnaScene }) => ({ default: DnaScene })),
-);
+const dnaScenePromise = import("@/components/DnaScene");
+const DnaScene = lazy(() => dnaScenePromise.then(({ DnaScene }) => ({ default: DnaScene })));
 
 function DnaScenePlaceholder() {
   return (
     <svg className="h-full w-full animate-pulse opacity-70" viewBox="0 0 240 420" aria-hidden="true">
-      <path d="M58 8C58 92 182 92 182 176S58 260 58 344s124 84 124 168" fill="none" stroke="var(--ivory)" strokeWidth="8" strokeLinecap="round" />
-      <path d="M182 8C182 92 58 92 58 176s124 84 124 168-124 84-124 168" fill="none" stroke="var(--mineral)" strokeWidth="8" strokeLinecap="round" />
+      <path d="M58 8C58 58 182 58 182 108S58 158 58 208 182 258 182 308 58 358 58 412" fill="none" stroke="var(--ivory)" strokeWidth="8" strokeLinecap="round" />
+      <path d="M182 8C182 58 58 58 58 108S182 158 182 208 58 258 58 308 182 358 182 412" fill="none" stroke="var(--mineral)" strokeWidth="8" strokeLinecap="round" />
       <path d="M65 35h110M78 74h84M112 113h16M151 152h-62M169 191h-98M151 230H89M112 269h16M78 308h84M65 347h110M78 386h84" stroke="var(--signal)" strokeWidth="4" strokeLinecap="round" />
     </svg>
   );
@@ -57,7 +56,7 @@ export const Route = createFileRoute("/")({
     link: [
     {
       rel: "icon",
-      href: "/src/assets/Logo.png",
+      href: "logo",
       type: "image/png",
     },
   ],

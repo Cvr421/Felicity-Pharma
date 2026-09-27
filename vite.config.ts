@@ -5,6 +5,9 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  optimizeDeps: {
+    include: ["three", "@react-three/fiber"],
+  },
   plugins: [
     ...tanstackStart({ server: { entry: "server" } }),
     react(),
